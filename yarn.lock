@@ -10110,11 +10110,6 @@ optionator@^0.8.1, optionator@^0.8.3:
     type-check "~0.3.2"
     word-wrap "~1.2.3"
 
-oracledb@^4.0.1:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/oracledb/-/oracledb-4.2.0.tgz#b4d97957d206f7c2d1c2286cc80e91ff2d45fce8"
-  integrity sha512-07ZylNcUB9wknsiRa7dNqDWgGK3loP8eNWuoCjsiCOZ19PA1g8QLu+0gah7ty82VXl/MOQYFCMl5OpjD9Aqjcw==
-
 original@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/original/-/original-1.0.2.tgz#e442a61cffe1c5fd20a65f3261c26663b303f25f"
