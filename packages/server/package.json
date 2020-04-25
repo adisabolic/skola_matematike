@@ -1,0 +1,28 @@
+{
+  "name": "@boilerplate/server",
+  "main": "build/index.js",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@oracledb/helpers": "^1.0.0",
+    "apollo-server": "^2.6.3",
+    "bcryptjs": "^2.4.3",
+    "dataloader": "^2.0.0",
+    "dotenv": "^8.2.0",
+    "graphql": "^14.3.1",
+    "graphql-iso-date": "^3.6.1",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.20.3",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.9.9",
+    "pg": "^7.14.0",
+    "pino": "^5.14.0"
+  },
+  "scripts": {
+    "clean": "rimraf build",
+    "build:dependencies": "yarn workspace @oracledb/helpers build",
+    "build": "yarn build:dependencies && babel --root-mode upward src -s -D -d build",
+    "start": "nodemon --exec babel-node --root-mode upward src/index.js | pino-pretty",
+    "start:prod": "yarn clean && yarn build && pm2 start build/index.js"
+  }
+}
