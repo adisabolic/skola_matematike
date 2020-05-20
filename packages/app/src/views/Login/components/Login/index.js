@@ -17,15 +17,14 @@ const Login = () => {
     const [isError, setIsError] = useState(false);
     //const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
-    const { setAuthTokens } = useAuth();
-    const { setUserName } = useAuth();
+    const { setAuthToken, setUser } = useAuth();
 
     const onFinish = (values) => {
         login({ variables: { email: values.mail, password: values.password } })
         .then(result => {
       if (result.data) {
-        setAuthTokens(result.data.login.token);
-        setUserName(result.data.login.user.name)
+        setAuthToken(result.data.login.token);
+        setUser(result.data.login.user);
         setLoggedIn(true);
       } else {
           console.log("error.message");

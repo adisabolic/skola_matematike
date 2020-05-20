@@ -1,20 +1,21 @@
 import React from 'react';
-import Header from '../../../components/Header';
-//import { Content } from '../../Logo../components/Layout';
-import { AuthContext } from "../../../context/Auth";
+import { Content } from '../../../components/Layout'
 import { useAuth } from "../../../context/Auth";
+import Tabs from './components/Tabs';
 
 
 
 
 const MentorHomePage = () => {
 
-    const { userName, authToken } = useAuth();
+    const { authToken, user } = useAuth();
 
     return(<>
-        <Header/>
-            <p>{userName}</p>
-            <p>{authToken}</p>
+    <Content>
+        <Tabs/>
+    </Content>
+        
+           
     </>)
 };
 

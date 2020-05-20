@@ -3,6 +3,7 @@ import Navbar from '../Navbar';
 import Footer from '../Footer';
 import { LayoutWrapper, CenteredContainer, ContentWrapper } from './style';
 
+
 const Layout = ({ children }) => {
   return (
     <LayoutWrapper>
@@ -15,9 +16,11 @@ const Layout = ({ children }) => {
 
 export const Content = ({ children }) => {
   return (
-    <CenteredContainer>
-      <ContentWrapper>{children}</ContentWrapper>
-    </CenteredContainer>
+    <Content style={{ padding: '0 50px', marginTop: 64 }}>
+      <CenteredContainer>
+        <ContentWrapper>{children}</ContentWrapper>
+      </CenteredContainer>
+    </Content>
   );
 };
 

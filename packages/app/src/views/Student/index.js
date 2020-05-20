@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../../../components/Header';
-import { Content } from '../../../components/Layout';
+import Header from '../../components/Header';
+import { Content } from '../../components/Layout';
 
 const StudentHomePage = () => {
     return(<>

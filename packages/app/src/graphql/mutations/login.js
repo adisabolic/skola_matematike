@@ -13,6 +13,10 @@ export const loginMutation = gql`
         name
         surname
         email
+        role {
+          flag
+          name
+        }
       }
     }
   }
