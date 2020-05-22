@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { useAuth } from "./context/Auth";
 import MentorHomePage from './views/Mentor/Home';
-import StudentHomePage from './views/Student';
+import StudentHomePage from './views/Student/Home';
 
 function RoleRouter() {
   

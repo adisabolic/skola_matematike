@@ -16,11 +16,11 @@ const Layout = ({ children }) => {
 
 export const Content = ({ children }) => {
   return (
-    <Content style={{ padding: '0 50px', marginTop: 64 }}>
+    
       <CenteredContainer>
         <ContentWrapper>{children}</ContentWrapper>
       </CenteredContainer>
-    </Content>
+    
   );
 };
 

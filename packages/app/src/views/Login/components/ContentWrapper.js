@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import HomeBg from './home-bg.jpg';
 
 export  const ContentWrapper = styled.div`
     height : 90vh;

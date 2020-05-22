@@ -20,7 +20,7 @@ const Navbar = () => {
           mode="horizontal"
         >
           <Logo />
-          <Menu.Item key="/">
+          <Menu.Item style={{borderRadius:'5px'}}  key="/">
             <HomeOutlined />
             <span>Home</span>
           </Menu.Item>

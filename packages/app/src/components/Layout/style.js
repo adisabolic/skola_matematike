@@ -15,7 +15,7 @@ export const LayoutWrapper = styled.div`
 export const ContentWrapper = styled.div`
   background: #fff;
   min-height: 83vh;
-  margin-top: 64px;
+  margin-top: 84px;
   padding: 20px;
 `;
 
@@ -23,6 +23,7 @@ export const CenteredContainer = styled.div`
   height: 100%;
   width: 100%;
   padding: 0px 20px;
+  float:right;
   
  
 `;

@@ -4,29 +4,23 @@ import { useAuth } from "../../../context/Auth";
 import Tabs from './components/Tabs';
 import SideBar from './components/SideBar';
 import {Layout} from 'antd';
-import {MentorWrapper,MentorWrapperParent} from './components/MentorWrapper';
+import {StudentWrapper,StudentWrapperParent} from './components/StudentWrapper';
 
-
-
-
-
-const MentorHomePage = () => {
-
+const StudentHomePage = () => {
     const { authToken, user } = useAuth();
 
     return(
-        <MentorWrapperParent>
-            <MentorWrapper>
-                <Layout style={{height:'100%'}}>
+        <StudentWrapperParent>
+            <StudentWrapper>
+                <Layout style={{minHeight:'95vh'}}>
                     <SideBar/>
                     
-                        <Tabs style={{ marginLeft: '20vw' }} />
+                        <Tabs/>
                     
                 </Layout>
-            </MentorWrapper>
-        </MentorWrapperParent>
+            </StudentWrapper>
+        </StudentWrapperParent>
     )
 };
 
-export default MentorHomePage;
-
+export default StudentHomePage;

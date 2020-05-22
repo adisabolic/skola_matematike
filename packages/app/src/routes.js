@@ -5,7 +5,7 @@ import Login from './views/Login';
 import RoleRouter from './RoleRouter'
 
 const Routes = () => {
-  console.log("routes");
+
   return (
     <Switch>
       <Route exact path="/login" component={Login} />
