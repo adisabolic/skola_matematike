@@ -1,14 +1,22 @@
 import React , { createContext, useContext, useState } from 'react';
+import Cookies from 'js-cookie'
 
 
 export const Context = createContext({});
 
 export const Provider = (props) => {
+  
   // Initial values are obtained from the props
   const { children } = props;
 
-  const [authToken, setAuthToken] = useState(null); 
-  const [user,setUser] = useState(null);
+  let CookieToken = Cookies.get('token') || 'a';
+
+  let CookieUser = JSON.parse(Cookies.get('user') || '{}');
+
+  const [authToken, setAuthToken] = useState(CookieToken); 
+  const [user,setUser] = useState(CookieUser);
+
+  
 
   // Make the context object:
   const context = {

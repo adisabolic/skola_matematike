@@ -3,12 +3,19 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import { useAuth } from "./context/Auth";
 import MentorHomePage from './views/Mentor/Home';
 import StudentHomePage from './views/Student/Home';
+import Cookies from 'js-cookie'
+import { useQuery } from '@apollo/react-hooks';
+import { ErrorIllustration } from './components/Illustration';
+import {
+  getCurrentUserQuery,
+  getCurrentUserQueryOptions
+} from './graphql/queris/getCurrentUser';
 
 function RoleRouter() {
   
-  const { authToken, user } = useAuth();
+  const { authToken, user, setUser } = useAuth();  
 
-  
+  console.log(user);
   
   if(authToken) { //admin & mentor
     if (user.role.flag===1 || user.role.flag===2) {

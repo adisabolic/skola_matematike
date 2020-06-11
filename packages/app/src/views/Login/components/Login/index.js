@@ -8,14 +8,19 @@ import { useMutation } from '@apollo/react-hooks';
 import { useAuth } from "../../../../context/Auth";
 import { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
+import Cookies from 'js-cookie'
+import { useCookie } from 'react-cookie'
+
+// TODO: sigurno čuvanje cookia
 
 
 const Login = () => {
+  
 
     const [login, { data }] = useMutation(loginMutation);
     const [isLoggedIn, setLoggedIn] = useState(false);
     const [isError, setIsError] = useState(false);
-    //const [userName, setUserName] = useState("");
+    const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const { setAuthToken, setUser } = useAuth();
 
@@ -23,6 +28,8 @@ const Login = () => {
         login({ variables: { email: values.mail, password: values.password } })
         .then(result => {
       if (result.data) {
+        document.cookie = 'token=' + result.data.login.token;
+        document.cookie = 'user=' + JSON.stringify(result.data.login.user);
         setAuthToken(result.data.login.token);
         setUser(result.data.login.user);
         setLoggedIn(true);
@@ -37,7 +44,6 @@ const Login = () => {
     }
     
     if (isLoggedIn) {
-        console.log("logged in je true");
         return <Redirect to="/" />;
       }
 

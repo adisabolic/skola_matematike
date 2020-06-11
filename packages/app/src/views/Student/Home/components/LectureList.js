@@ -1,6 +1,13 @@
 import React from 'react';
 import { List, Avatar, Space,Tag } from 'antd';
 import {UserOutlined,CalendarOutlined } from '@ant-design/icons';
+import { useQuery } from '@apollo/react-hooks';
+import { ErrorIllustration } from '../../../../components/Illustration';
+import {
+  getLecturesByCourseQuery,
+  getLecturesByCourseQueryOptions
+} from '../../../../graphql/queris/getLecturesbyCourse';
+import { useAuth } from '../../../../context/Auth';
 
 
 const data = [{_id:'1',mentor:{name:'Admir',surname:'Beširević'},cycle:{year:{name:'2019/2020'},
@@ -21,6 +28,19 @@ const IconText = ({ icon, text }) => (
   );
 
 const LectureList = () => {
+    const { user } = useAuth();
+    console.log(user.course._id)
+    const { data, loading, error, refetch } = useQuery(
+        getLecturesByCourseQuery,
+        getLecturesByCourseQueryOptions(user && user.course && user.course._id),
+      );
+    
+      if (error)
+        return (
+          <ErrorIllustration text={`Error while fetching data: ${error.message}`} />
+        );
+    
+      const lecturesByCourse = data && data.lecturesByCourse && data.lecturesByCourse.nodes;
     return(
         <List
         itemLayout="vertical"
@@ -33,7 +53,7 @@ const LectureList = () => {
         },
         pageSize: 3,
         }}
-        dataSource={data}
+        dataSource={lecturesByCourse}
         footer={null}
         renderItem={item => (
         <List.Item

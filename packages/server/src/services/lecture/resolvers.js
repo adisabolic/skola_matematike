@@ -5,11 +5,11 @@ export default {
 			return dataSources.LectureAPI.getAllLectures(args);
 		},
 		lectureById: (_, { id }, { user, dataSources }) => {
-			dataSources.UserAPI.adminMentorOnly(user);
+			dataSources.UserAPI.loggedId(user);
 			return dataSources.LectureAPI.getLectureById(id);
 		},
 		lecturesByCourse: (_, args, { user, dataSources }) => {
-			dataSources.UserAPI.adminMentorOnly(user);
+			dataSources.UserAPI.loggedIn(user);
 			return dataSources.LectureAPI.getLecturesByCourse(args);
 		},
 	},

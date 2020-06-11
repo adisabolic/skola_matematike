@@ -19,16 +19,16 @@ function App() {
   return (
     
     <ErrorBoundary>
-      <ApolloProvider>
-        <ContextProvider>
+      <ContextProvider>
+        <ApolloProvider>
           <Router>
             <ScrollToTop />
             <Layout>
               <Routes />
             </Layout>
           </Router>
-        </ContextProvider>
-      </ApolloProvider>
+        </ApolloProvider>
+      </ContextProvider>
     </ErrorBoundary>
   
 

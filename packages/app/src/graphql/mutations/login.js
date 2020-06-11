@@ -13,6 +13,10 @@ export const loginMutation = gql`
         name
         surname
         email
+        course {
+          _id
+          name
+        }
         role {
           flag
           name

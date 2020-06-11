@@ -1,11 +1,11 @@
 export default {
 	Query: {
 		notifications: (_, args, { user, dataSources }) => {
-			dataSources.UserAPI.adminMentorOnly(user);
+			dataSources.UserAPI.loggedIn(user);
 			return dataSources.NotificationAPI.getAllNotifications(args);
 		},
 		notificationById: (_, { id }, { user, dataSources }) => {
-			dataSources.UserAPI.adminMentorOnly(user);
+			dataSources.UserAPI.loggedIn(user);
 			return dataSources.NotificationAPI.getNotificationById(id);
 		},
 	},
