@@ -5,6 +5,7 @@ import { notification } from 'antd';
 export const getCurrentUserQuery = gql`
     query currentUser{
         currentUser {
+            _id
             name
             surname
             email

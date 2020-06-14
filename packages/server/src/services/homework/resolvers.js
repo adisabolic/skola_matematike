@@ -1,15 +1,15 @@
 export default {
 	Query: {
 		homeworks: (_, args, { user, dataSources }) => {
-			dataSources.UserAPI.adminOnly(user);
+			dataSources.UserAPI.adminMentorOnly(user);
 			return dataSources.HomeworkAPI.getAllHomeworks(args);
 		},
 		homeworkById: (_, { id }, { user, dataSources }) => {
-			dataSources.UserAPI.adminMentorOnly(user);
+			dataSources.UserAPI.loggedIn(user);
 			return dataSources.HomeworkAPI.getHomeworkById(id);
 		},
 		homeworksByCourse: (_, args, { user, dataSources }) => {
-			dataSources.UserAPI.adminMentorOnly(user);
+			dataSources.UserAPI.loggedIn(user);
 			return dataSources.HomeworkAPI.getHomeworksByCourse(args);
 		},
 	},

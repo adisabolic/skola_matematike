@@ -9,7 +9,7 @@ export default {
 			return dataSources.HomeworkCommentAPI.getHomeworkCommentById(id);
 		},
 		homeworkCommentsByHomework: (_, args, { user, dataSources }) => {
-			dataSources.UserAPI.adminMentorOnly(user);
+			dataSources.UserAPI.loggedIn(user);
 			return dataSources.HomeworkCommentAPI.getHomeworkCommentsByHomework(args);
 		},
 	},

@@ -9,7 +9,7 @@ export const Provider = (props) => {
   // Initial values are obtained from the props
   const { children } = props;
 
-  let CookieToken = Cookies.get('token') || 'a';
+  let CookieToken = Cookies.get('token') || '';
 
   let CookieUser = JSON.parse(Cookies.get('user') || '{}');
 

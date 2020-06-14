@@ -10,6 +10,7 @@ export const loginMutation = gql`
     ){
       token
       user{
+        _id
         name
         surname
         email

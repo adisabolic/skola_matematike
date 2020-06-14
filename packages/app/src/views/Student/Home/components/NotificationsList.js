@@ -34,7 +34,8 @@ const NotificationsList = () => {
         <ErrorIllustration text={`Error while fetching data: ${error.message}`} />
       );
   
-    const notifications = data && data.nodes;
+    const notifications = data && data.notifications && data.notifications.nodes;
+
     return(
         <List
         itemLayout="vertical"

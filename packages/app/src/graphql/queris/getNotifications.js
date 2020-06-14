@@ -20,7 +20,7 @@ export const getNotificationsQuery = gql`
 `;
 
 export const getNotificationsQueryOptions = ( condition = {},) => ({
-  variables: { limit: 10, condition: condition },
+  variables: { limit: 3, condition: condition },
   fetchPolicy: 'network-only',
   notifyOnNetworkStatusChange: true,
 });

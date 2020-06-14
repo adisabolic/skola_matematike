@@ -6,7 +6,7 @@ import { ErrorIllustration } from '../../../../components/Illustration';
 import {
   getLecturesByCourseQuery,
   getLecturesByCourseQueryOptions
-} from '../../../../graphql/queris/getLecturesbyCourse';
+} from '../../../../graphql/queris/getLecturesByCourse';
 import { useAuth } from '../../../../context/Auth';
 
 
@@ -29,7 +29,6 @@ const IconText = ({ icon, text }) => (
 
 const LectureList = () => {
     const { user } = useAuth();
-    console.log(user.course._id)
     const { data, loading, error, refetch } = useQuery(
         getLecturesByCourseQuery,
         getLecturesByCourseQueryOptions(user && user.course && user.course._id),

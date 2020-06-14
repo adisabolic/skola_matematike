@@ -15,9 +15,9 @@ function RoleRouter() {
   
   const { authToken, user, setUser } = useAuth();  
 
-  console.log(user);
+  console.log(authToken);
   
-  if(authToken) { //admin & mentor
+  if(authToken && user) { //admin & mentor
     if (user.role.flag===1 || user.role.flag===2) {
       return(<Switch>
         <Route path="/" component={MentorHomePage}/>
