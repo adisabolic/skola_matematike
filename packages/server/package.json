@@ -12,7 +12,7 @@
     "graphql-iso-date": "^3.6.1",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.20.3",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.23",
     "mongoose": "^5.9.9",
     "pg": "^7.14.0",
     "pino": "^5.14.0"
